@@ -1,0 +1,21 @@
+﻿<Window x:Class="OptifineDownloader.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OptifineDownloader"
+        mc:Ignorable="d"
+        Title="OptifineDowloader" Height="412" Width="304">
+    <Canvas Height="412" VerticalAlignment="Center" HorizontalAlignment="Left" Width="304">
+        <Label Content="Select minecraft version" Width="264" Height="46"  FontSize="24"  HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Left="10" Canvas.Top="15" />
+        <ComboBox  x:Name="Versions_ComboBox" Width="264" Height="29" IsEnabled="True" FontSize="14" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"  Canvas.Left="10" Canvas.Top="56" HorizontalAlignment="Left" VerticalAlignment="Center" SelectionChanged="Versions_ComboBox_SelectionChanged" />
+        <Label Content="Select optifine version"  Height="42" FontSize="24"  Canvas.Left="10" Canvas.Top="80" Width="264" />
+        <ComboBox  x:Name="Optifine_Versions_ComboBox" IsEnabled="True" HorizontalContentAlignment="Left" FontSize="14"  VerticalContentAlignment="Center" Canvas.Left="10" Canvas.Top="122" HorizontalAlignment="Left" VerticalAlignment="Center" Width="264" Height="29"/>
+        <Button x:Name="Download_Button" Content="Download" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="30" Canvas.Left="11" Canvas.Top="296" HorizontalAlignment="Center" VerticalAlignment="Top" Height="63" Width="264" Click="Download_Button_Click">
+        </Button>
+        <CheckBox Content="CheckBox (currently not working)" Canvas.Left="11" Canvas.Top="246.998" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <TextBox x:Name="DownloadPatch_Field" Canvas.Left="11" TextWrapping="Wrap" Text="TextBox" Canvas.Top="267.097" Width="200" HorizontalAlignment="Center" VerticalAlignment="Top" Height="24"/>
+        <Button x:Name="DownloadPatch_Button" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="..." Canvas.Left="216" Canvas.Top="267.205" HorizontalAlignment="Center" VerticalAlignment="Top" Width="24" Height="24" Click="DownloadPatch_Button_Click"/>
+        <Label x:Name="DownloadInfo_Label" Canvas.Left="11" Canvas.Top="362" Width="263" Height="26" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+    </Canvas>
+</Window>
