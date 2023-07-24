@@ -16,7 +16,7 @@ namespace OptifineDownloader.Utils.Parser
             {
                 versions.Add(node.FirstChild.GetAttributeValue("href", null)); //get links from nodes
             }
-            return versions.ToArray();
+            return versions.ToArray(); 
         }
 
         public static string GetFinalDownloadLink(string html)

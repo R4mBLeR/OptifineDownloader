@@ -13,7 +13,7 @@
         <ComboBox  x:Name="Optifine_Versions_ComboBox" IsEnabled="True" HorizontalContentAlignment="Left" FontSize="14"  VerticalContentAlignment="Center" Canvas.Left="10" Canvas.Top="122" HorizontalAlignment="Left" VerticalAlignment="Center" Width="264" Height="29"/>
         <Button x:Name="Download_Button" Content="Download" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="30" Canvas.Left="11" Canvas.Top="296" HorizontalAlignment="Center" VerticalAlignment="Top" Height="63" Width="264" Click="Download_Button_Click">
         </Button>
-        <CheckBox Content="CheckBox (currently not working)" Canvas.Left="11" Canvas.Top="246.998" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <CheckBox x:Name="Run_CheckBox" Content="Run .jar file after download" Canvas.Left="11" Canvas.Top="246.998" HorizontalAlignment="Center" VerticalAlignment="Top"/>
         <TextBox x:Name="DownloadPatch_Field" Canvas.Left="11" TextWrapping="Wrap" Text="TextBox" Canvas.Top="267.097" Width="200" HorizontalAlignment="Center" VerticalAlignment="Top" Height="24"/>
         <Button x:Name="DownloadPatch_Button" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="..." Canvas.Left="216" Canvas.Top="267.205" HorizontalAlignment="Center" VerticalAlignment="Top" Width="24" Height="24" Click="DownloadPatch_Button_Click"/>
         <Label x:Name="DownloadInfo_Label" Canvas.Left="11" Canvas.Top="362" Width="263" Height="26" HorizontalAlignment="Center" VerticalAlignment="Top"/>

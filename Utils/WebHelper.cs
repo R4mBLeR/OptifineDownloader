@@ -7,6 +7,7 @@ namespace OptifineDownloader.Utils
     abstract class WebHelper
     {
         static readonly HttpClient client = new HttpClient();
+
         public static string GetHtml(string url)
         {
             try
@@ -20,6 +21,7 @@ namespace OptifineDownloader.Utils
                 return ex.Message;
             }
         }
+
         public async static Task DownloadOptifine(string downloadLink, string downloadPath, string name)
         {
             var res = await client.GetAsync(downloadLink);

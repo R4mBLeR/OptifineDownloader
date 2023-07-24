@@ -9,8 +9,7 @@ namespace OptifineDownloader.Utils.StringManager
             for (int i = 0; i < array.Length; i++)
             {
                 ref string link = ref array[i];
-                int startPos = link.IndexOf("OptiFine");
-                //Get Optifine version
+                int startPos = link.IndexOf("OptiFine");  
                 link = link[startPos..];
                 int endPos = link.IndexOf(".jar&");
                 link = link[..endPos];

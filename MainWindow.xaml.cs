@@ -14,6 +14,7 @@ namespace OptifineDownloader
     {
         private const string url = "https://optifine.net/downloads";
         private readonly Dictionary<string, List<string>>? versions;
+        private object locker = new();
         public MainWindow()
         {
             InitializeComponent();
@@ -22,6 +23,7 @@ namespace OptifineDownloader
             Versions_ComboBox.SelectedItem = Versions_ComboBox.Items[0];
             ResetOptiFineVersions();
             DownloadPatch_Field.Text = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            Run_CheckBox.IsChecked = false;
         }
 
         private void Versions_ComboBox_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
@@ -41,6 +43,26 @@ namespace OptifineDownloader
             await WebHelper.DownloadOptifine(downloadLink, DownloadPatch_Field.Text, downloadName);
             SetEnabledDownloadElements(true);
             DownloadInfo_Label.Content = "Optifine downloaded!";
+            if (Run_CheckBox.IsChecked == true)
+            {
+                string command;
+                command = $"-jar \"{DownloadPatch_Field.Text}\\{downloadName}.jar\"";
+                var processInfo = new ProcessStartInfo("java.exe", command)
+                {
+                    UseShellExecute = true,
+                    WindowStyle = ProcessWindowStyle.Hidden
+                };
+                try
+                {
+                    var proc = Process.Start(processInfo);
+                    proc!.Close();
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine(ex.Message);
+                }
+            }
+
         }
 
         private void DownloadPatch_Button_Click(object sender, RoutedEventArgs e)
@@ -62,6 +84,7 @@ namespace OptifineDownloader
             DownloadPatch_Field.IsEnabled = value;
             DownloadPatch_Button.IsEnabled = value;
             Download_Button.IsEnabled = value;
+            Run_CheckBox.IsEnabled = value;
         }
 
         private Dictionary<string, List<string>> GetVersionsDictionary()
@@ -89,6 +112,5 @@ namespace OptifineDownloader
                 }
             }
         }
-
     }
 }
